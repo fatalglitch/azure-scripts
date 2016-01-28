@@ -1,0 +1,20 @@
+##
+## Get-AzureRmRoleDefinition -Name "Virtual Machine Contributor" | ConvertTo-Json | Out-File C:\temp\vmrole.json
+## Get-AzureRmSubscription
+## New-AzureRmRoleDefinition -InputFile C:\temp\vmrole.json
+
+{
+    "Name":  "Example - Network Access",
+    "Description":  "Enables access to the Virtual Network for XXX Consultants",
+    "Actions":  [
+                    "Microsoft.Network/virtualNetworks/read",
+                    "Microsoft.Network/virtualNetworks/subnets/join/action",
+					"Microsoft.Resources/subscriptions/resourceGroups/read"					
+                ],
+    "NotActions":  [
+
+                   ],
+    "AssignableScopes":  [
+                             "/subscriptions/<subscription ID Here>"
+                         ]
+}

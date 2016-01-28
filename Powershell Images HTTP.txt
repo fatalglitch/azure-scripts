@@ -1,0 +1,15 @@
+Powershell HTTP Request
+
+$r = [System.Net.WebRequest]::Create("http://url/")
+$resp = $r.GetResponse()
+$reqstream = $resp.GetResponseStream()
+$sr = new-object System.IO.StreamReader $reqstream
+$result = $sr.ReadToEnd()
+write-host $result
+
+Username and passwords
+$creds = new-object System.Net.NetworkCredential "username", "password"
+$uri = mew-object System.Uri "http://url/"
+$credcache = new-object System.Net.CredentialCache
+$credcache.Add($uri, "Basic", $creds)
+$webrequestobject.Credentials = $credcache

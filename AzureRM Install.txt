@@ -1,0 +1,8 @@
+# Install the Azure Service Management module from the PowerShell Gallery
+Install-Module Azure
+
+# Import AzureRM modules for the given version manifest in the AzureRM module
+Import-AzureRM
+
+# Import Azure Service Management module
+Import-Module Azure
